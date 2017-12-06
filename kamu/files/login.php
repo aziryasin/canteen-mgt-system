@@ -42,6 +42,8 @@
 		}	
 		
 	}
+	else
+		header("Location: ..");
 ?>
 </body>
 </html>

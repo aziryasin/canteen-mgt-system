@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hello <?php echo $_SESSION['name'];?></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	
     <!-- Optional Bootstrap theme -->
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -45,9 +46,9 @@
 					<input type="hidden" name="price" value="<?php echo $row['price'];?>">
 					<input type="hidden" name="foodName" value="<?php echo $row['foodName'];?>">
 					<td><select name="meal" class="form-control">
-						<option value="breakfast">Breakfast</option>
-						<option value="lunch">Lunch</option>
-						<option value="dinner">Dinner</option>
+						<option value="Breakfast">Breakfast</option>
+						<option value="Lunch">Lunch</option>
+						<option value="Dinner">Dinner</option>
 					</select></td>
 					<td><?php echo $row['foodName']; ?></td>
 					<td><?php echo $row['type']; ?></td>
@@ -63,5 +64,7 @@
 		</table>
 		</div>
 		</div>
+
+		<a href="setFeedback.php" class="btn btn-warning">Set Feedback</a>
 </body>
 </html>
