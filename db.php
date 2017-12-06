@@ -1,5 +1,5 @@
 <?php
-	$con=mysqli_connect("localhost","username","password");
+	$con=mysqli_connect("localhost","root","");
 
 	$query="create database kamu";
 	if(mysqli_query($con,$query)){
@@ -39,6 +39,15 @@
 	$query="create table audit(auditId int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,username varchar(20),totalDue FLOAT(8,2))";
 	if(mysqli_query($con,$query)){
 		echo "Success audit<br/>";
+	}
+	else{
+		echo "failed <br/>".mysqli_error($con);
+	}
+
+	//Feedback Table
+	$query="create table feedback(fId int UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,name varchar(50),comment varchar(200),date DATE,reply varchar(200))";
+	if(mysqli_query($con,$query)){
+		echo "Success Feedback<br/>";
 	}
 	else{
 		echo "failed <br/>".mysqli_error($con);
