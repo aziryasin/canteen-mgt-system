@@ -15,14 +15,31 @@
 	<title>Set Feedback</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="icon" href="image/kamu-logo-icon.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body style="background-image: url('image/kamu-bg.png'); background-repeat:repeat; background-attachment: fixed;">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
+      <p class="navbar-text" style="color: #00cc33"> <strong>Welcome <?php echo $_SESSION['name']?></strong></p>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="buyer.php">Buyer Dashboard</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
 	<form action="setFeedback.php" method="POST" style="margin: 5%">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<?php echo "Feedback | ".$_SESSION['username']; ?>
+				<?php echo "Feedback | ".$_SESSION['name']; ?>
 			</div>
 			<div class="panel-body">
 				<textarea name='txtcomment' rows="10" style="width: 100%" maxlength="200" class="form-control" id="txtarea"></textarea>
@@ -52,7 +69,7 @@
 <?php 
 	if(isset($_POST['btn_comment'])){
 		$comment = mysqli_real_escape_string($con,$_POST['txtcomment']);
-		$sql="INSERT INTO feedback (name,comment,date) VALUES ('{$_SESSION['username']}','{$comment}','{$date}')";
+		$sql="INSERT INTO feedback (name,comment,date) VALUES ('{$_SESSION['name']}','{$comment}','{$date}')";
 		if(mysqli_query($con,$sql)){
 			echo '<script language="javascript">';
 			echo 'alert("Feedback sent Successful.")';

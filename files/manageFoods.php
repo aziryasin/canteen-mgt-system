@@ -9,10 +9,28 @@
 <head>
 	<title>Manage Foods</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<link rel="icon" href="image/kamu-logo-icon.png">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <img src="image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
+      <p class="navbar-text" style="color: #00cc33"> <strong>Welcome <?php echo $_SESSION['name']?></strong></p>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="addFoods.php">Add New Food Item</a></li>
+      <li><a href="seller.php">Seller Dashboard</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
 </body>
 </html>
 
@@ -26,8 +44,9 @@
 	$q1="select * from food";
 	$result=mysqli_query($con,$q1);
 	
-	echo "<div class='container-fluid'>";
-	echo "<table border='1' class='table table-stripped'>";
+	echo "<div class='container well'>";
+	echo "<div class='table-responsive'>";
+	echo "<table class='table table-striped table-hover table-bordered'>";
 		echo "<tr>";
 			echo "<th>Food Name</th>";
 			echo "<th>Type</th>";
@@ -52,7 +71,5 @@
 	
 	echo "</table>";
 	echo "</div>";
-		//To Navigation Bar
-	echo "<a href='addFoods.php' class='btn btn-success'>Add New Food</a>";
-	echo "<a href='seller.php' class='btn btn-info'>Seller Page</a>";
+	echo "</div>";
 ?>
