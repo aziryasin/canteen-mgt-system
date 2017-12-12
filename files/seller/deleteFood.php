@@ -1,11 +1,11 @@
 <?php
 	session_start();
 	if($_SESSION['role']!='seller')
-		header("Location: ../index.html");
+		header("Location:localhost/PHP/kamu/index.html");
 ?>
 
 <?php
-	include('conn.php');
+	include('../conn.php');
 	extract($_POST);
 	
 		

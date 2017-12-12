@@ -30,20 +30,18 @@
 			}
 		if($row['role']=="admin")
 		{
-			header("Location:admin.php");
+			header("Location:admin/admin.php");
 		}
 		else if($row['role']=="buyer")
 		{
-			header("Location:buyer.php");
+			header("Location:buyer/buyer.php");
 		}
 		else if($row['role']=="seller")
 		{
-			header("Location:seller.php");
+			header("Location:seller/seller.php");
 		}	
 		
 	}
-	else
-		header("Location: ..");
 ?>
 </body>
 </html>

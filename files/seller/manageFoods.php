@@ -19,12 +19,16 @@
 <nav class="navbar navbar-inverse ">
   <div class="container-fluid">
     <div class="navbar-header">
-      <img src="image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
+      <img src="../image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
       <p class="navbar-text" style="color: #00cc33"> <strong>Welcome <?php echo $_SESSION['name']?></strong></p>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="addFoods.php">Add New Food Item</a></li>
-      <li><a href="seller.php">Seller Dashboard</a></li>
+    <ul class="nav navbar-nav"><li ><a href="seller.php">View Orders</a></li>
+    </ul>
+    <ul class="nav navbar-nav"><li class="active"><a href=#>Manage foods</a></li>
+    </ul>
+   <ul class="nav navbar-nav"><li><a href="setFeedback.php">Get Analyze Report</a></li>
+    </ul>
+   <ul class="nav navbar-nav"><li><a href="getFeedback.php">View Feedback</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -36,7 +40,7 @@
 
 <?php
 	
-	include('conn.php');
+	include('../conn.php');
 	extract($_POST);
 	global $con;
 	mysqli_select_db($con,"kamu");
@@ -67,9 +71,10 @@
 					echo "</form>";
 				echo "</td>";
 			echo "</tr>";
-		}
+		}?>
 	
-	echo "</table>";
-	echo "</div>";
-	echo "</div>";
-?>
+	</table>
+	</div>
+	<a href="addFoods.php"> Add a Food item</a>
+	</div>
+
