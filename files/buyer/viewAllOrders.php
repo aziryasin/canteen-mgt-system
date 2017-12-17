@@ -49,6 +49,7 @@
 </form>
 <a href="viewOrders.php">Today's Orders</a>
 	<?php
+		if(isset($_POST['view'])){
 		include "../conn.php";
 		$from=$_POST['from'];
 		$to=$_POST['to'];
@@ -106,7 +107,7 @@
 		<?php
 		}
 
-		?>
+		}?>
 
 </body>
 </html>
