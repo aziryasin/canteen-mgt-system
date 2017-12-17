@@ -93,13 +93,13 @@
 		</div>
 		</div>
 			<?php
-					$query="select SUM(total) as due from orderInfo where eid=".$eid."AND orderDate between '".$from."' And '".$to."'";
+					$query="select SUM(total) as due from orderInfo where eid=".$eid." AND orderDate between '".$from."' And '".$to."'";
 					$result=mysqli_query($con,$query);
-					$row=mysqli_fetch_assoc($result);
+					$row2=mysqli_fetch_assoc($result);
 			?>
 
 			
-				<h2 style="font-family: 'Source Sans Pro', sans-serif; color: #f45642; text-align:center;">Your Total Due is Rs.<?php echo $row['due'];?></h2>
+				<h2 style="font-family: 'Source Sans Pro', sans-serif; color: #f45642; text-align:center;">Your Total Due is Rs.<?php echo $row2['due'];?></h2>
 			
 			
 
