@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	$.ajax({
-		url: "http://localhost/PHP/kamu/files/chr/data.php",
+		url: "http://localhost/PHP/kamu/files/seller/chr/data.php",
 		method: "GET",
 		data: $('#myform').serialize(),
 		success: function(data) {
@@ -42,14 +42,24 @@ $(document).ready(function(){
             yAxes: [{
                 ticks: {
                     beginAtZero:true
-                }
+
+                },
+		
+			scaleLabel: {
+        			display: true,
+       			 labelString: 'No.of Orders'
+      			}
             }],
 			xAxes: [{
                 ticks: {
 					autoSkip:false,
 					maxRotation:90,
 					minRotation:90,
-                }
+                },
+                scaleLabel: {
+        			display: true,
+       			 labelString: 'Food Items'
+      			}
             }]
         }
     }

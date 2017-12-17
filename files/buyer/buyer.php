@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hello <?php echo $_SESSION['name'];?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="icon" href="image/kamu-logo-icon.png">
+	<link rel="icon" href="../image/kamu-logo-icon.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="../css/style.css">
@@ -37,9 +37,9 @@
 		include '../conn.php';
 		
 		?>
-		<div class="container-fluid">
+		<div class="container-fluid well">
 		<div class="table-responsive">
-		<table  class="table table-striped">
+		<table  class="table table-striped table-hover table-bordered">
 		<thead>
 		<tr>
 			<th>Meal</th>

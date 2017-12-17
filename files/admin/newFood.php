@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	include('../conn.php');
-	if($_SESSION['role']!='seller')
+	if($_SESSION['role']!='admin')
 		header("Location: ../index.html");
 ?>
 
@@ -23,13 +23,11 @@
       <img src="../image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
       <p class="navbar-text" style="color: #00cc33"> <strong>Welcome <?php echo $_SESSION['name']?></strong></p>
     </div>
-    <ul class="nav navbar-nav"><li ><a href="seller.php">View Orders</a></li>
+    <ul class="nav navbar-nav"><li><a href="admin.php">User Management</a></li>
     </ul>
-    <ul class="nav navbar-nav"><li class="active"><a href="manageFoods.php">Manage foods</a></li>
+    <ul class="nav navbar-nav"><li  class="active"><a href="foodMgt.php">Food Management</a></li>
     </ul>
-   <ul class="nav navbar-nav"><li><a href="report.php">Get Analyze Report</a></li>
-    </ul>
-   <ul class="nav navbar-nav"><li><a href="chr/chart.php">View Feedback</a></li>
+   <ul class="nav navbar-nav"><li><a href="chr/chart.php">Get Audit Report</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -38,7 +36,7 @@
 </nav>
 
 	<div class="container well well-lg">
-		<form action="addFoods.php" method="GET">
+		<form action="newFood.php" method="GET">
 			<div class="form-group">
 				<label>Food Name</label>
 				<input type="text" name="txtfood" class="form-control" placeholder="Food Name">

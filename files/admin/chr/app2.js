@@ -4,7 +4,7 @@ $('#postData').click(function(e) {
 	
     e.preventDefault();
 	$.ajax({
-		url: "http://localhost/PHP/kamu/files/seller/chr/data.php",
+		url: "http://localhost/kamu/files/chr/data.php",
 		type: 'POST',
 		data: $('#myform').serialize(),
 		success: function(data) {

@@ -22,6 +22,18 @@
 				$_SESSION['role']=$row['role'];
 				$_SESSION['eid']=$row['eid'];
 				$_SESSION['name']=$row['name'];
+				if(date('H')<11)
+				{
+					$_SESSION['meal']="breakfast";
+				}
+				elseif (date('H')<16)
+				{
+					$_SESSION['meal']="lunch";
+				}
+				else
+				{
+					$_SESSION['meal']="dinner";
+				}
 			}
 			else
 			{

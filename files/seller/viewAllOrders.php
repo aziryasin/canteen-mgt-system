@@ -22,7 +22,7 @@
       <img src="../image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
       <p class="navbar-text" style="color: #00cc33"> <strong>Welcome <?php echo $_SESSION['name']?></strong></p>
     </div>
-    <ul class="nav navbar-nav"><li class="active"><a href="seller.php">View Orders</a></li>
+    <ul class="nav navbar-nav"><li class="active"><a href=#>View Orders</a></li>
     </ul>
     <ul class="nav navbar-nav"><li><a href="manageFoods.php">Manage foods</a></li>
     </ul>
@@ -35,14 +35,35 @@
     </ul>
   </div>
 </nav>	
-<a href="viewAllOrders.php">View All Orders</a>
 	<?php
-		
 		include '../conn.php';
-		$date=date('Y-m-d');
+		
+		?>
+		<form action="viewAllOrders.php" method="post">
+			<div class="row">
+			<div class="col-sm-4">
+			<label for="from">From:</label>
+			<input type="date" class="form-control" id="from" name="from">
+			</div>
+			<div class="col-sm-4">
+			<label for="to">To:</label>
+			<input type="date" class="form-control" id="to" name="to">
+			</div>
+			<div class="col-sm-4">
+			<input type="submit" class="btn btn-success" name="view" value="View" id="view" style="height:60px; width:100px;">
+			</div>
+  			</div>
+</form>
+<a href="seller.php">Today's Orders</a>
+
+		<?php
+		$from=$_POST['from'];
+		$to=$_POST['to'];
+		
 		if($_SESSION['role']=="seller")
 		{?>
-		<div class="container-fluid">
+		<div class="container-fluid well">
+
 		<div class="table-responsive">
 		<table  class="table table-striped table-hover table-bordered">
 		<thead>
@@ -59,7 +80,7 @@
 	<?php
 		
 			$eid=$_SESSION['eid'];
-			$query="select orderId,name,orderDate,meal,foodName,qty from orderInfo,user where user.eid=orderInfo.eid AND orderDate='".$date."'";
+			$query="select orderId,name,orderDate,meal,foodName,qty from orderInfo,user where user.eid=orderInfo.eid AND orderDate between '".$from."' And '".$to."'";
 			$result=mysqli_query($con,$query);
 			while($row=mysqli_fetch_assoc($result))
 			{

@@ -51,52 +51,23 @@
 
 
 		<body>
-		<nav class="navbar navbar-inverse ">
+<nav class="navbar navbar-inverse ">
   <div class="container-fluid">
     <div class="navbar-header">
       <img src="http://localhost/PHP/kamu/files/image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
       <p class="navbar-text" style="color: #00cc33"> <strong>Welcome <?php echo $_SESSION['name']?></strong></p>
     </div>
-    <ul class="nav navbar-nav"><li><a href="../seller.php">View Orders</a></li>
+    <ul class="nav navbar-nav"><li><a href="../admin.php">User Management</a></li>
     </ul>
-    <ul class="nav navbar-nav"><li><a href="../manageFoods.php">Manage foods</a></li>
+    <ul class="nav navbar-nav"><li><a href="../foodMgt.php">Food Management</a></li>
     </ul>
-   <ul class="nav navbar-nav"><li  class="active"><a href=#>Get Analyze Report</a></li>
-    </ul>
-   <ul class="nav navbar-nav"><li><a href="../getFeedback.php">View Feedback</a></li>
+   <ul class="nav navbar-nav"><li class="active"><a href=#>Get Audit Report</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="../logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
-<div class="container-fluid well" style="width:300px;height:150px;">
-							
-	<form action="chart.php" method="post" name="mealForm">
-      <select class="form-control"  name="meal">
-          <option value="breakfast"> Breakfast</option>
-          <option value="lunch">Lunch</option>
-          <option value="dinner">Dinner</option>
-      </select>
-      <input type="submit" name="report" class="btn btn-success" value="OK" style="margin-left:100px; margin-top:5px;">
-    </form>
-    <h2 style="margin-left:20px;;"><?php echo ucwords($_SESSION['meal']);?> Orders</h2>
-</div>
-<?php
-	extract($_POST);
-	if(isset($report)){
-	if($meal=="breakfast"){
-		$_SESSION['meal']="breakfast";
-	}
-	elseif($meal=="lunch"){
-		$_SESSION['meal']="lunch";
-	}
-	elseif ($meal=="dinner") {
-		$_SESSION['meal']="dinner";
-	}	
-	header("Location:chart.php");
-	}
-?>
 		
 				<script src="Chart.min.js"></script>
 				<script src="jquery.min.js"></script>
@@ -113,7 +84,7 @@
 						<div class="container-fluid well" style="width:300px;height:120px;">
 							
 								<form name="dateForm"  method="POST" id="myform" onsubmit="validateForm() " class="form-login">
-										Get report for:
+										Get Report for:
 										<input type="text" name="Dates" id="1">
 										
 										

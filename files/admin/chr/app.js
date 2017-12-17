@@ -1,11 +1,8 @@
 $(document).ready(function(){
-$('#postData').click(function(e) {
-	 var fd = $('#1').val();
-	
-    e.preventDefault();
+
 	$.ajax({
-		url: "http://localhost/PHP/kamu/files/seller/chr/data.php",
-		type: 'POST',
+		url: "http://localhost/kamu/files/chr/data.php",
+		method: "GET",
 		data: $('#myform').serialize(),
 		success: function(data) {
 			console.log(data);
@@ -45,6 +42,7 @@ $('#postData').click(function(e) {
             yAxes: [{
                 ticks: {
                     beginAtZero:true
+
                 },
 		
 			scaleLabel: {
@@ -72,6 +70,4 @@ $('#postData').click(function(e) {
 			console.log(data);
 		}
 	});
-});
-
 });

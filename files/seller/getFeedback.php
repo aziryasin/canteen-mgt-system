@@ -17,14 +17,19 @@
 </head>
 <body style="background-image: url('image/kamu-bg.png'); background-repeat:repeat; background-attachment: fixed;">
  
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse ">
   <div class="container-fluid">
     <div class="navbar-header">
-      <img src="image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
+      <img src="../image/kamu-logo-icon.png" style="width: 70px;height: 50px" class="navbar-brand">
       <p class="navbar-text" style="color: #00cc33"> <strong>Welcome <?php echo $_SESSION['name']?></strong></p>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="seller.php">Seller Dashboard</a></li>
+    <ul class="nav navbar-nav"><li><a href="seller.php">View Orders</a></li>
+    </ul>
+    <ul class="nav navbar-nav"><li><a href="manageFoods.php">Manage foods</a></li>
+    </ul>
+   <ul class="nav navbar-nav"><li><a href="chr/chart.php">Get Analyze Report</a></li>
+    </ul>
+   <ul class="nav navbar-nav"><li  class="active"><a href=#>View Feedback</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -38,7 +43,7 @@
   <div class="panel-group">
     
     <?php 
-      include('conn.php');
+      include('../conn.php');
 
       $sql = "SELECT * FROM feedback";
       $result = mysqli_query($con,$sql);

@@ -32,30 +32,15 @@
   </div>
 </nav>
 
-<form action=viewOrders.php method="post">
-	<div class="row">
-	<div class="col-sm-4">
-	<label for="from">From:</label>
-	<input type="date" class="form-control" id="from" name="from">
-	</div>
-	<div class="col-sm-4">
-	<label for="to">To:</label>
-	<input type="date" class="form-control" id="to" name="to">
-	</div>
-	<div class="col-sm-4">
-	<input type="submit" class="btn btn-success" name="view" value="View" id="view" style="height:60px; width:100px;">
-	</div>
-  	</div>
-</form>
+<a href="viewAllOrders.php">View All Orders</a>
 	<?php
 		include "../conn.php";
-		$from=$_POST['from'];
-		$to=$_POST['to'];
+		$date=date('Y-m-d');
 		if($_SESSION['role']=="buyer")
 		{?>
-		<div class="container-fluid">
+		<div class="container-fluid well">
 		<div class="table-responsive">
-		<table  class="table table-striped">
+		<table  class="table table-striped table-hover table-bordered">
 		<thead>
 		<tr>
 			<th>Order ID</th>
@@ -71,7 +56,7 @@
 	<?php
 		
 			$eid=$_SESSION['eid'];
-			$query="select * from orderInfo where eid=".$eid." AND orderDate between '".$from."' And '".$to."'";
+			$query="select * from orderInfo where eid=".$eid." AND orderDate='".$date."'";
 			$result=mysqli_query($con,$query);
 			while($row=mysqli_fetch_assoc($result))
 			{

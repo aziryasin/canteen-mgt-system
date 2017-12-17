@@ -26,7 +26,7 @@
     </ul>
     <ul class="nav navbar-nav"><li class="active"><a href=#>Manage foods</a></li>
     </ul>
-   <ul class="nav navbar-nav"><li><a href="setFeedback.php">Get Analyze Report</a></li>
+   <ul class="nav navbar-nav"><li><a href="chr/chart.php">Get Analyze Report</a></li>
     </ul>
    <ul class="nav navbar-nav"><li><a href="getFeedback.php">View Feedback</a></li>
     </ul>

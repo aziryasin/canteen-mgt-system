@@ -1,16 +1,13 @@
 <?php
-	session_start();
-?>
-<?php
 header('Content-Type:application/json');
-include("../../conn.php");
+include("../conn.php");
     
 //extract($_POST);
 	
 	$data=extract($_POST);
 	$date = date('Y-m-d');
 	
-    $sql1="SELECT  foodName as Food , SUM( qty ) as sum FROM  `orderInfo` where meal='{$_SESSION['meal']}' AND orderDate='{$date}' GROUP BY  `foodName` ";
+    $sql1="SELECT  foodName as Food , SUM( qty ) as sum FROM  `orderInfo` where orderDate='{$date}' GROUP BY  `foodName` ";
    
 	
 	if (mysqli_connect_errno($con))
