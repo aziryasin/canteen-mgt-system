@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	$.ajax({
-		url: "http://localhost/kamu/files/chr/data.php",
+		url: "http://localhost/kamu/files/admin/chr/data.php",
 		method: "GET",
 		data: $('#myform').serialize(),
 		success: function(data) {

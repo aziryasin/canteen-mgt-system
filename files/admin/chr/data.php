@@ -1,6 +1,6 @@
 <?php
 header('Content-Type:application/json');
-include("../conn.php");
+include("../../conn.php");
     
 //extract($_POST);
 	
