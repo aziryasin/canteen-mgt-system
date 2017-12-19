@@ -33,12 +33,12 @@
     </ul>
   </div>
 </nav>		
-				<div  style="height:80px; width:500px;">
+				<div class="container-fluid" style="margin-bottom: 20px;">
 
-					<a  href="newFood.php" class="btn btn-success" style="vertical-align:middle; margin-left:100px; margin-top:20px;">Add new food</a>
+					<a  href="newFood.php" class="btn btn-success">Add new food</a>
 							
 
-								<div class="clearfix"> </div>
+
 					</div>	
 	<?php
 		include "../conn.php";
@@ -50,7 +50,7 @@
 
 <table class="table table-striped table-hover table-bordered">
 			<tr>
-				<th>Food_Id</th>
+				<th>Food Id</th>
 				<th>Food Name</th>
 				<th>Food Type</th>
 				<th>Price</th>

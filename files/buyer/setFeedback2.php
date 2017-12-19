@@ -32,7 +32,7 @@
     </ul>
     <ul class="nav navbar-nav"><li><a href="viewOrders.php">View Orders</a></li>
     </ul>
-   <ul class="nav navbar-nav"><li class="active"><a href=#>Feedback</a></li>
+   <ul class="nav navbar-nav"><li class="active"><a href=#>Give Feedback</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -67,59 +67,6 @@
 			</div>
 		</div>
 	</form>
-
-	<?php 
-		 $query_count = "SELECT COUNT(*) FROM feedback WHERE name='{$_SESSION['name']}'";
-		 $result = mysqli_query($con,$query_count);
-
-		 if($result!=null)
-		 {
-		 	echo "
-		 		<div class='container-fluid'>
-					<div class='well'>
-						<h3 align='center'>Previous Feedbacks</h3>
-
-						<div class='container' style='margin-top: 30px'>
-  						<div class='panel-group'>
-		 	";
-
-		 	$sql = "SELECT * FROM feedback WHERE name='{$_SESSION['name']}'";
-      		$result = mysqli_query($con,$sql);
-
-      		while($row=mysqli_fetch_assoc($result)){
-        		$id=$row['fId'];
-        		$name=$row['name'];
-
-        		echo "<div class='panel panel-primary'>";
-          			echo "<div class='panel-heading'>";
-            			echo "<strong>".$row['name']."</strong> | <small>".$row['date']."</small>";
-          			echo "</div>";
-          			echo "<div class='panel-body'>";
-            			echo $row['comment'];
-            			if($row['reply']!=null){
-              			//New Panel for Reply
-              			echo "<div class='panel panel-warning' style='margin-top: 15px'>";
-                  			echo "<div class='panel-heading'>";
-                    			echo "<strong>Reply :</strong>";
-                  			echo "</div>";
-                  			echo "<div class='panel-body'>";
-                    			echo $row['reply'];
-                  			echo "</div>";
-              			echo "</div>";
-            			}
-          			echo "</div>";
-        		echo "</div>";
-      		}
-		 }
-
-		 echo "
-		 	</div>
-			</div>
-		</div>
-		</div>
-		 ";
-	 ?>
-  			
 </body>
 </html>
 
@@ -138,6 +85,6 @@
 			echo '</script>';
 		}
 
-		echo "<script>setTimeout(\"location.href='setFeedback.php';\",50);</script>";
+		echo "<script>setTimeout(\"location.href='buyer.php';\",50);</script>";
 	}
  ?>

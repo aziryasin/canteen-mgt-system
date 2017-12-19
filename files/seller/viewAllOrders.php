@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Hello <?php echo $_SESSION['name'];?></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="icon" href="image/kamu-logo-icon.png">
+	<link rel="icon" href="../image/kamu-logo-icon.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="../css/style.css">
@@ -39,6 +39,7 @@
 		include '../conn.php';
 		
 		?>
+		<div class="container-fluid">
 		<form action="viewAllOrders.php" method="post">
 			<div class="row">
 			<div class="col-sm-4">
@@ -54,9 +55,16 @@
 			</div>
   			</div>
 </form>
-<a href="seller.php">Today's Orders</a>
+</div>
+<div class="container-fluid" >
+	<a href="seller.php" class="btn btn-success">Today's Orders</a>
+	<a href="buyerDue.php" class="btn btn-success">View Orders by each user</a>
+</div>
+
+
 
 		<?php
+		if(isset($_POST['view'])){
 		$from=$_POST['from'];
 		$to=$_POST['to'];
 		
@@ -101,7 +109,7 @@
 		</div>
 		<?php
 		}
-		
+		}
 		?>
 </body>
 </html>

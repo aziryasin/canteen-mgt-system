@@ -75,6 +75,6 @@
 	
 	</table>
 	</div>
-	<a href="addFoods.php"> Add a Food item</a>
+	<a href="addFoods.php" class="btn btn-danger"> Add a Food item</a>
 	</div>
 

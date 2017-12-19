@@ -35,7 +35,11 @@
     </ul>
   </div>
 </nav>	
-<a href="viewAllOrders.php">View All Orders</a>
+
+<div class="container-fluid" style=" margin-bottom: 20px;">
+	<a href="viewAllOrders.php" class="btn btn-success">View All Orders</a>
+	<a href="buyerDue.php" class="btn btn-success">View Orders by each user</a>
+</div>
 	<?php
 		
 		include '../conn.php';

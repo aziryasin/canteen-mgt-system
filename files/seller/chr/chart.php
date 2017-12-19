@@ -70,7 +70,7 @@
     </ul>
   </div>
 </nav>
-<div class="container-fluid well" style="width:300px;height:150px;">
+<div class="container-fluid well" style="width:300px;height:150px;" id="mealBox">
 							
 	<form action="chart.php" method="post" name="mealForm">
       <select class="form-control"  name="meal">

@@ -24,7 +24,7 @@
     </ul>
     <ul class="nav navbar-nav"><li class="active"><a href=#>View Orders</a></li>
     </ul>
-   <ul class="nav navbar-nav"><li><a href="setFeedback.php">Give Feedback</a></li>
+   <ul class="nav navbar-nav"><li><a href="setFeedback.php">Feedback</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
@@ -32,7 +32,10 @@
   </div>
 </nav>
 
-<a href="viewAllOrders.php">View All Orders</a>
+<div class="container-fluid" style="margin-bottom: 10px;"> 
+	<a href="viewAllOrders.php" class="btn btn-success">View All Orders</a>
+</div>
+
 	<?php
 		include "../conn.php";
 		$date=date('Y-m-d');

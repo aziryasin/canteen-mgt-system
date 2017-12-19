@@ -26,7 +26,7 @@
     </ul>
     <ul class="nav navbar-nav"><li><a href="viewOrders.php">View Orders</a></li>
     </ul>
-   <ul class="nav navbar-nav"><li><a href="setFeedback.php">Give Feedback</a></li>
+   <ul class="nav navbar-nav"><li><a href="setFeedback.php">Feedback</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>

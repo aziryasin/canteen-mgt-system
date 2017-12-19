@@ -24,14 +24,14 @@
     </ul>
     <ul class="nav navbar-nav"><li class="active"><a href=#>View Orders</a></li>
     </ul>
-   <ul class="nav navbar-nav"><li><a href="setFeedback.php">Give Feedback</a></li>
+   <ul class="nav navbar-nav"><li><a href="setFeedback.php">Feedback</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
-
+<div class="container-fluid" style="margin-bottom: 10px;"> 
 <form action="viewAllOrders.php" method="post">
 	<div class="row">
 	<div class="col-sm-4">
@@ -43,11 +43,14 @@
 	<input type="date" class="form-control" id="to" name="to">
 	</div>
 	<div class="col-sm-4">
-	<input type="submit" class="btn btn-success" name="view" value="View" id="view" style="height:60px; width:100px;">
+	<input type="submit" class="btn btn-success" name="view" value="View" id="view" style="margin-top:25px; width:100px;">
 	</div>
   	</div>
 </form>
-<a href="viewOrders.php">Today's Orders</a>
+</div>
+<div class="container-fluid" style="margin-bottom: 10px;"> 
+<a href="viewOrders.php" class="btn btn-success">Today's Orders</a>
+</div>
 	<?php
 		if(isset($_POST['view'])){
 		include "../conn.php";
